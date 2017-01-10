@@ -1,0 +1,12 @@
+[06-Jan-2017 23:58:26] Warning at framework/model/connect/MySQLiConnector.php line 77: mysqli::mysqli(): (HY000/2002): No such file or directory (http://localhost:8888/example2/Security/ping)
+[06-Jan-2017 23:58:26] Error at framework/model/connect/DBConnector.php line 55: Uncaught SS_DatabaseException: Couldn't connect to MySQL database | No such file or directory (http://localhost:8888/example2/Security/ping)
+[08-Jan-2017 22:08:35] Error at framework/model/connect/DBConnector.php line 55: Uncaught SS_DatabaseException: Couldn't run query:
+
+SELECT DISTINCT "ArticleCategory"."ID"
+
+FROM "ArticleCategory"
+INNER JOIN "ArticlePage_Categories" ON "ArticlePage_Categories"."ArticleCategoryID" = "ArticleCategory"."ID"
+
+WHERE ("ArticlePage_Categories"."ArticlePageID" = ?)
+
+Table 'ss_example2.articlepage_categories' doesn't exist (http://localhost:8888/example2/admin/pages/edit/show/9)
