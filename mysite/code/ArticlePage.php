@@ -84,11 +84,15 @@ class ArticlePage_Controller extends Page_Controller {
                ->setAttribute('placeholder', $field->getName().'*');
     }
 
-    return $form;
+    $data = Session::get("FormData.{$form->getName()}.data");
+    return $data ? $form->loadDataFrom($data) : $form;
   }
 
   public function handleComment($data, $form) {
-    $existing = $this->Comment()->filter(array (
+    error_log('set formdata');
+    Session::set("FormData.{$form->getName()}.data", $data);
+
+    $existing = $this->Comments()->filter(array (
       'Comment' => $data['Comment']
     ));
 
@@ -105,6 +109,7 @@ class ArticlePage_Controller extends Page_Controller {
 
     $comment->write();
 
+    Session::clear("FormData.{$form->getName()}.data");
     $form->sessionMessage('Thanks for your comment!', 'good');
 
     return $this->redirectBack();
