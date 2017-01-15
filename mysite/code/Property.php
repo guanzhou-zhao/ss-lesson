@@ -7,7 +7,10 @@ class Property extends DataObject {
 		'PricePerNight' => 'Currency',
 		'Bedrooms' => 'Int',
 		'Bathrooms' => 'Int',
-		'FeaturedOnHomepage' => 'Boolean'
+		'FeaturedOnHomepage' => 'Boolean',
+		'AvailableStart' => 'Date',
+		'AvailableEnd' => 'Date',
+		'Description' => 'Text'
 	);
 
 	private static $has_one = array (
@@ -50,6 +53,7 @@ class Property extends DataObject {
 		$fields = FieldList::create(TabSet::create('Root'));
 		$fields->addFieldsToTab('Root.Main', array(
 			TextField::create('Title'),
+			TextareaField::create('Description'),
 			CurrencyField::create('PricePerNight', 'Price (per night)'),
 			DropdownField::create('Bedrooms')
 				->setSource(ArrayLib::valuekey(range(1,10))),
@@ -58,7 +62,7 @@ class Property extends DataObject {
 			DropdownField::create('RegionID','Region')
 				->setSource(Region::get()->map('ID','Title'))
 				->setEmptyString('-- Select a region --'),
-			CheckboxField::create('FeaturedOnHomepage','Feature on homepage')			
+			CheckboxField::create('FeaturedOnHomepage','Feature on homepage')
 		));
 		$fields->addFieldToTab('Root.Photos', $upload = UploadField::create(
 			'PrimaryPhoto',

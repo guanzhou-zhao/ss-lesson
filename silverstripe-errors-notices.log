@@ -1,1 +1,2 @@
 [12-Jan-2017 20:46:10] Notice at mysite/code/ArticlePage.php line 88: Array to string conversion (http://localhost:8888/example2/travel-guides/new-article-page-1/?flushtoken=e290b770eab6032be0201824e0d4d564&flush=)
+[15-Jan-2017 19:44:27] Notice at mysite/code/RegionsPage.php line 34: Undefined variable: regin (http://localhost:8888/example2/regions/show/1?flush=&flushtoken=116e73d0a40a69b784d7fcc37231e0b4)

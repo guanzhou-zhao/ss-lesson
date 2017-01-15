@@ -7,13 +7,21 @@ class Region extends DataObject {
   );
   private static $db = array (
     'Title' => 'Varchar',
-    'Description' => 'Text',
+    'Description' => 'HTMLText',
   );
   private static $summary_fields = array (
     'Photo.Filename' => 'Photo file name',
     'Title' => 'Title of region',
     'Description' => 'Short description'
   );
+
+  public function Link() {
+    return $this->RegionsPage()->Link('show/'.$this->ID);
+  }
+
+  public function LinkingMode() {
+    return Controller::curr()->getRequest()->param('ID') == $this->ID ? 'current' : 'link';
+  }
 
   public function getGridThumbnail() {
     if ($this->Photo()->exists()) {
@@ -25,7 +33,7 @@ class Region extends DataObject {
   public function getCMSFields() {
     $fields = FieldList::create(
       TextField::create('Title'),
-      TextareaField::create('Description'),
+      HtmlEditorField::create('Description'),
       $uploader = UploadField::create('Photo')
     );
 

@@ -11,3 +11,6 @@ WHERE ("ArticlePage_Categories"."ArticlePageID" = ?)
 
 Table 'ss_example2.articlepage_categories' doesn't exist (http://localhost:8888/example2/admin/pages/edit/show/9)
 [10-Jan-2017 22:00:36] Error at framework/core/Object.php line 780: Uncaught Exception: Object->__call(): the method 'comment' does not exist on 'ArticlePage_Controller', or the method is not public. (http://localhost:8888/example2/travel-guides/new-article-page-1/CommentForm)
+[15-Jan-2017 19:13:42] Error at framework/forms/HtmlEditorField.php line 71: Uncaught Exception: HtmlEditorField->saveInto(): This field should save into a HTMLText or HTMLVarchar field. (http://localhost:8888/example2/admin/pages/edit/EditForm/field/Regions/item/1/ItemEditForm)
+[15-Jan-2017 19:14:11] Error at framework/forms/HtmlEditorField.php line 71: Uncaught Exception: HtmlEditorField->saveInto(): This field should save into a HTMLText or HTMLVarchar field. (http://localhost:8888/example2/admin/pages/edit/EditForm/field/Regions/item/1/ItemEditForm)
+[15-Jan-2017 19:15:04] Error at framework/forms/HtmlEditorField.php line 71: Uncaught Exception: HtmlEditorField->saveInto(): This field should save into a HTMLText or HTMLVarchar field. (http://localhost:8888/example2/admin/pages/edit/EditForm/field/Regions/item/1/ItemEditForm)
